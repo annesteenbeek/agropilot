@@ -37,11 +37,18 @@ void AP_MotorsQuad::setup_motors()
 
     }else if( _flags.frame_orientation == AP_MOTORS_V_FRAME ) {
         // V frame set-up
+        add_motor_raw(AP_MOTORS_MOT_1, -0.376f,  0.211f, AP_MOTORS_MATRIX_YAW_FACTOR_CW,  1); 
+        add_motor_raw(AP_MOTORS_MOT_2, -1.000f, -0.211f, AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 2); 
+        add_motor_raw(AP_MOTORS_MOT_3,  1.000f, -0.211f, AP_MOTORS_MATRIX_YAW_FACTOR_CW,  3); 
+        add_motor_raw(AP_MOTORS_MOT_4,  0.376f,  0.211f, AP_MOTORS_MATRIX_YAW_FACTOR_CCW, 4);
+        
+        /*
         add_motor(AP_MOTORS_MOT_1,   45,  0.7981f,  1);
         add_motor(AP_MOTORS_MOT_2, -135,  1.0000f,  3);
         add_motor(AP_MOTORS_MOT_3,  -45, -0.7981f,  4);
         add_motor(AP_MOTORS_MOT_4,  135, -1.0000f,  2);
-
+        */
+        
     }else if( _flags.frame_orientation == AP_MOTORS_H_FRAME ) {
         // H frame set-up - same as X but motors spin in opposite directiSons
         add_motor(AP_MOTORS_MOT_1,   45, AP_MOTORS_MATRIX_YAW_FACTOR_CW,  1);
