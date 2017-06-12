@@ -5,7 +5,7 @@ This version is set at ardupilot 3.4.2
 ## How to install and upload to pixhawk
 First you need the code base, this can be retrieved from github if not already available on the PC.
 
-### Clone the ropo to the desktop for new installation
+### Clone the repo to the desktop for new installation
 If the code has already been downloaded, skip to the next section.
 Assuming git is installed on your PC and set up correctly.
 
