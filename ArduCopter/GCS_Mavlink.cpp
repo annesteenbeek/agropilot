@@ -2128,6 +2128,13 @@ void GCS_MAVLINK_Copter::handleMessage(mavlink_message_t* msg)
         break;
     }
 
+    case MAVLINK_MSG_ID_SET_AGRO_MODE:
+        /* ::printf("Received the set mode message\n"); */
+        mavlink_set_agro_mode_t packet;
+        mavlink_msg_set_agro_mode_decode(msg, &packet);
+        mavlink_msg_set_agro_mode_send(chan, 0, 0, packet.agro_mode);
+        break;
+
     case MAVLINK_MSG_ID_ADSB_VEHICLE:
     case MAVLINK_MSG_ID_UAVIONIX_ADSB_OUT_CFG:
     case MAVLINK_MSG_ID_UAVIONIX_ADSB_OUT_DYNAMIC:

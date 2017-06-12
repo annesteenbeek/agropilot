@@ -25,6 +25,7 @@
 extern const AP_HAL::HAL& hal;
 
 #define ROUTING_DEBUG 0
+#define FORWARD_DEBUG 0
 
 // constructor
 MAVLink_routing::MAVLink_routing(void) : num_routes(0) {}
@@ -143,7 +144,11 @@ bool MAVLink_routing::check_and_forward(mavlink_channel_t in_channel, const mavl
                                  (broadcast_component || 
                                   target_component == routes[i].compid ||
                                   !match_system))) {
+#if FORWARD_DEBUG
+            if (true) {
+#else
             if (in_channel != routes[i].channel && !sent_to_chan[routes[i].channel]) {
+#endif
                 if (comm_get_txspace(routes[i].channel) >= ((uint16_t)msg->len) +
                     GCS_MAVLINK::packet_overhead_chan(routes[i].channel)) {
 #if ROUTING_DEBUG
