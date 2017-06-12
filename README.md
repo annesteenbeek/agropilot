@@ -28,7 +28,7 @@ To update the code that has already been downloaded on the pc:
 
 ### Uploading 
 - Start the PX4Console, this can be found under Start | All Programs | PX4 Toolchain | PX4Console
-- Go to the folder where ardupilot was was installed. For example: `cd /C/Users/Admin/Desktop/APMCustom/agropilot/`
+- Go to the folder where ardupilot was was installed. For example: `cd /C/Users/Admin/Desktop/APMCustom/agropilot/ArduCopter/`
 - Then build the code by typing `make px4-v2`. The code should now be compiling
 - Then load the MP and connect to the pixhawk Load custom software under installation tab. Open the custom software while the drone is not connected via MAV link, but connected, then load the custom software and the title that appears, then approve, then await tones, then connect mav to continue 
 
